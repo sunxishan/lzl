@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>酷播迷你</title>
+</head>
+<body>
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+<div class="video" id="CuPlayer" style="950px;margin:0 auto;">
+	<strong>提示：您的Flash Player版本过低，请<a href="http://www.52player.com/">点此进行网页播放器升级</a>！</strong></div>
+<script type="text/javascript">
+var so = new SWFObject("flash.swf","CuPlayerV4","800","480","0","#000000");
+so.addParam("allowfullscreen","true");
+so.addParam("allowscriptaccess","always");
+so.addParam("wmode","opaque");
+so.addParam("quality","high");
+so.addParam("salign","lt");
+so.addVariable("CuPlayerSetFile","js/CuPlayerSetFile.xml");
+so.addVariable("CuPlayerFile","video/test.mp4"); //视频文件地址
+so.addVariable("CuPlayerImage","js/start.jpg");//视频略缩图
+so.addVariable("CuPlayerWidth","800"); //视频宽度
+so.addVariable("CuPlayerHeight","480"); //视频高度
+so.addVariable("CuPlayerAutoPlay","no"); //是否自动播放
+so.write("CuPlayer");
+</script>
+
+</body>
+</html>

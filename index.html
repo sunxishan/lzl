@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<title>旅之旅</title>
+<meta name="keywords" content="旅之旅,旅之旅" />
+<meta name="description" content="旅之旅" />
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<div class="header">
+	<div class="header_m">
+        <a href="index.html" class="logo"><img src="images/logo.png" /></a>
+        <a class="menu"><i class="iconfont">&#xe602;</i></a>
+        <ul class="nav">
+            <li><a href="index.html"><span>HOME</span>首  页</a></li>
+            <li><a href="about.html"><span>ABOUT</span>关于我们</a></li>
+            <li><a href="product.html"><span>PRODUCT</span>产品服务</a></li>
+            <li><a href="case.html"><span>CASE</span>案例中心</a></li>
+            <li><a href="partner.html"><span>PARTNER</span>合作伙伴</a></li>
+            <li><a href="contact.html"><span>CONTACT</span>联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        	<div class="slideimg" style="background:url(images/banner01.jpg) no-repeat center center;"></div>
+            <img src="images/banner01.png" class="slide-wenzi" />
+        </div>
+        <div class="swiper-slide">
+        	<div class="slideimg" style="background:url(images/banner02.jpg) no-repeat center center;"></div>
+            <img src="images/banner02.png" class="slide-wenzi" />
+        </div>
+        <div class="swiper-slide">
+        	<div class="slideimg" style="background:url(images/banner03.jpg) no-repeat center center;"></div>
+            <img src="images/banner03.png" class="slide-wenzi" />
+        </div>
+        <div class="swiper-slide">
+        	<div class="slideimg" style="background:url(images/banner04.jpg) no-repeat center center;"></div>
+            <img src="images/banner04.png" class="slide-wenzi" />
+        </div>
+        <div class="swiper-slide">
+        	<div class="slideimg" style="background:url(images/banner05.jpg) no-repeat center center;"></div>
+            <img src="images/banner05.png" class="slide-wenzi" />
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<div class="foot">
+	<div class="foot_l">
+    	<a href="about.html">关于我们</a>
+        <span>|</span>
+    	<a href="contact.html">联系方式</a>
+        <span>|</span>
+    	<a href="join.html">加入我们</a>
+        <span>|</span>
+    	<a href="partner.html">合作伙伴</a>
+    </div>
+	<div class="foot_r">
+    	京ICP备09070896号-1 © 2015 EBOHR All Reserved. |  Powered by <a href="http://www.zw.cn" target="_blank">中万网络</a>
+    </div>
+</div>
+<ul class="ww">
+    <li>
+        <i class="iconfont">&#xe604;</i>
+        <span><img src="images/test.jpg"></span>
+    </li>
+    <li>
+        <a href="#" target="_blank" rel="nofollow" class="iconfont weibo">&#xe65c;</a>
+    </li>
+</ul>
+<script>
+$('.swiper-slide').eq(0).find('.slide-wenzi').css({"opacity": "0", "top": "-500px"});
+				$('.swiper-slide').eq(0).find('.slide-wenzi').animate({opacity: "1",top:'0%'},700);
+			
+    var swiper = new Swiper('.swiper-container', {
+         pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 0,
+        hashnav: true,
+		direction: 'vertical',
+		mousewheelControl: true,
+		simulateTouch : true,
+		onSlideChangeStart: function(swiper){
+			if(swiper.activeIndex==0){
+				$('.swiper-slide').eq(0).find('.slide-wenzi').css({"opacity": "0", "top": "-500px"});
+				$('.swiper-slide').eq(0).find('.slide-wenzi').animate({opacity: "1",top:'0%'},700);
+			}
+			if(swiper.activeIndex==1){
+				$('.swiper-slide').eq(1).find('.slide-wenzi').css({"opacity": "0", "left": "-500px"});
+				$('.swiper-slide').eq(1).find('.slide-wenzi').animate({opacity: "1",left:'0%'},700);
+			}
+			if(swiper.activeIndex==2){
+				$('.swiper-slide').eq(2).find('.slide-wenzi').css({"opacity": "0", "left": "1000px"});
+				$('.swiper-slide').eq(2).find('.slide-wenzi').animate({opacity: "1",left:'0%'},700);
+			}
+			if(swiper.activeIndex==3){
+				$('.swiper-slide').eq(3).find('.slide-wenzi').css({"opacity": "0", "top": "1000px"});
+				$('.swiper-slide').eq(3).find('.slide-wenzi').animate({opacity: "1",top:'0%'},700);
+			}
+			if(swiper.activeIndex==4){
+				$('.swiper-slide').eq(4).find('.slide-wenzi').css({"opacity": "0", "height": "0px"});
+				$('.swiper-slide').eq(4).find('.slide-wenzi').animate({opacity: "1",height:'30%'},700);
+			}
+		}
+		
+    });
+	$('.slideimg').addClass('slideimgs');
+	  setTimeout(function(){
+	  $('.slideimg').removeClass('slideimgs');  
+	  },5000);
+	 function myInterval(){
+		$('.slideimg').addClass('slideimgs');
+		setTimeout(function(){
+		$('.slideimg').removeClass('slideimgs');  
+		},5000);				
+	}
+	setInterval("myInterval()",10000);
+	
+	$('.header .menu').click(function(){
+		if($(this).hasClass('active')){
+			$(this).find('.iconfont').html('&#xe602;');
+			$(this).removeClass('active');
+			$(this).next('.nav').slideUp();
+		}else{
+			$(this).find('.iconfont').html('&#xe620;');
+			$(this).addClass('active');
+			$(this).next('.nav').slideDown();
+		}
+	});
+	
+	var w = $(window).width();
+	var h = $(window).height();
+	var header_m_h = $('.header_m').height();
+	var header_m_t = - header_m_h / 2 + 'px';
+	
+	if(w>999){
+		$('.header .header_m').css('margin-top',header_m_t);
+		$('.header .nav').show();
+	}else{
+		$('.header .header_m').css('margin-top','');
+		$('.header .nav').hide();
+		if(w*0.66>h){
+			$('.swiper-slide .slideimg').css('background-size','100% auto');
+			$('.slide-wenzi').css('width','auto');
+			$('.slide-wenzi').css('height','30%');
+		}else{
+			$('.swiper-slide .slideimg').css('background-size','auto 100%');
+			$('.slide-wenzi').css('height','auto');
+			$('.slide-wenzi').css('width','80%');
+		}
+	}
+	
+	$('.ww li i').mouseover(function(){
+		$(this).next('span').show();
+	}).mouseleave(function(){
+		$(this).next('span').hide();
+	});
+	$(window).resize(function() {
+		var w = $(window).width();
+		var h = $(window).height();
+		var header_m_h = $('.header_m').height();
+		var header_m_t = - header_m_h / 2 + 'px';
+		if(w>999){
+			$('.header .header_m').css('margin-top',header_m_t);
+			$('.header .nav').show();
+		}else{
+			$('.header .header_m').css('margin-top','');
+			$('.header .nav').hide();
+		}
+		if(w*0.66>h){
+			$('.swiper-slide .slideimg').css('background-size','100% auto');
+			$('.slide-wenzi').css('width','auto');
+			$('.slide-wenzi').css('height','30%');
+		}else{
+			$('.swiper-slide .slideimg').css('background-size','auto 100%');
+			$('.slide-wenzi').css('height','auto');
+			$('.slide-wenzi').css('width','80%');
+		}
+	});
+</script>
+</body>
+</html>
